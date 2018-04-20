@@ -1,4 +1,4 @@
-baseURL = "https://modest-wozniak-c29100.netlify.com/"
+baseURL = "https://python-blog.netlify.com/"
 languageCode = "en-us"
 title = "Python Self-Training"
 theme = "ananke"
