@@ -1,4 +1,4 @@
-baseURL = "http://example.org/"
+baseURL = "https://modest-wozniak-c29100.netlify.com/"
 languageCode = "en-us"
 title = "Python Self-Training"
 theme = "ananke"
