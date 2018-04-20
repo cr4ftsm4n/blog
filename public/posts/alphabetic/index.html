@@ -28,7 +28,14 @@
     
 
     <meta property="og:title" content="Alphabetic" />
-<meta property="og:description" content="Unicode" />
+<meta property="og:description" content="&gt;&gt;&gt;&#39;a&#39;.isalpha() True &gt;&gt;&gt; &#39;京&#39;.isalpha() True  昨天，碰到一个问题，为什么京会是 alpha 呢？回来仔细看了一下 rust 文档，上面清楚的写到是否为 alphabetic 是根据属于 Unicode Derived Core Property &lsquo;Alphabetic&rsquo;部分来判断的。想来 Python 也是一样。(不是我不想查 Python 的文档，是查不到。)
+
+让我们来看看 DerivedCoreProperties Alphabetic 的定义
+DerivedCoreProperties
+其中有一行正好包括了我们的京的 4eac
+4E00..9FEA ; Alphabetic # Lo [20971] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FEA  哦，原来如此。
+那么，问题来了 💝 是不是 Alphabatic 呢？
+&#39;💝&#39;.isalpha()  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://python-blog.netlify.com/posts/alphabetic/" />
 
@@ -49,19 +56,33 @@
 
 
 <meta itemprop="name" content="Alphabetic">
-<meta itemprop="description" content="Unicode">
+<meta itemprop="description" content="&gt;&gt;&gt;&#39;a&#39;.isalpha() True &gt;&gt;&gt; &#39;京&#39;.isalpha() True  昨天，碰到一个问题，为什么京会是 alpha 呢？回来仔细看了一下 rust 文档，上面清楚的写到是否为 alphabetic 是根据属于 Unicode Derived Core Property &lsquo;Alphabetic&rsquo;部分来判断的。想来 Python 也是一样。(不是我不想查 Python 的文档，是查不到。)
+
+让我们来看看 DerivedCoreProperties Alphabetic 的定义
+DerivedCoreProperties
+其中有一行正好包括了我们的京的 4eac
+4E00..9FEA ; Alphabetic # Lo [20971] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FEA  哦，原来如此。
+那么，问题来了 💝 是不是 Alphabatic 呢？
+&#39;💝&#39;.isalpha()  ">
 
 
 <meta itemprop="datePublished" content="2018-04-20T10:51:54&#43;09:00" />
 <meta itemprop="dateModified" content="2018-04-20T10:51:54&#43;09:00" />
-<meta itemprop="wordCount" content="1">
+<meta itemprop="wordCount" content="46">
 
 
 
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Alphabetic"/>
-<meta name="twitter:description" content="Unicode"/>
+<meta name="twitter:description" content="&gt;&gt;&gt;&#39;a&#39;.isalpha() True &gt;&gt;&gt; &#39;京&#39;.isalpha() True  昨天，碰到一个问题，为什么京会是 alpha 呢？回来仔细看了一下 rust 文档，上面清楚的写到是否为 alphabetic 是根据属于 Unicode Derived Core Property &lsquo;Alphabetic&rsquo;部分来判断的。想来 Python 也是一样。(不是我不想查 Python 的文档，是查不到。)
+
+让我们来看看 DerivedCoreProperties Alphabetic 的定义
+DerivedCoreProperties
+其中有一行正好包括了我们的京的 4eac
+4E00..9FEA ; Alphabetic # Lo [20971] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FEA  哦，原来如此。
+那么，问题来了 💝 是不是 Alphabatic 呢？
+&#39;💝&#39;.isalpha()  "/>
 
   </head>
 
@@ -112,7 +133,31 @@
       <time class="f6 mv4 dib tracked" datetime="2018-04-20T10:51:54&#43;09:00">April 20, 2018</time>
     </header>
 
-    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><p><a href="https://unicode.org/Public/UNIDATA/DerivedCoreProperties.txt">Unicode</a></p>
+    <main class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><pre><code>&gt;&gt;&gt;'a'.isalpha()
+True
+&gt;&gt;&gt; '京'.isalpha()
+True
+</code></pre>
+
+<p>昨天，碰到一个问题，为什么<strong>京</strong>会是 alpha 呢？回来仔细看了一下 rust 文档，上面清楚的写到是否为 alphabetic 是根据属于 Unicode Derived Core Property &lsquo;Alphabetic&rsquo;部分来判断的。想来 Python 也是一样。(不是我不想查 Python 的文档，是查不到。)</p>
+
+<p><a href="https://asciinema.org/a/wrSH1nwYmfSW7Ar1bxkN8o1Ha"><img src="https://asciinema.org/a/wrSH1nwYmfSW7Ar1bxkN8o1Ha.png" alt="asciicast" /></a></p>
+
+<p>让我们来看看 DerivedCoreProperties Alphabetic 的定义</p>
+
+<p><a href="https://unicode.org/Public/UNIDATA/DerivedCoreProperties.txt">DerivedCoreProperties</a></p>
+
+<p>其中有一行正好包括了我们的<strong>京</strong>的 <code>4eac</code></p>
+
+<pre><code>4E00..9FEA    ; Alphabetic # Lo [20971] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FEA
+</code></pre>
+
+<p>哦，原来如此。</p>
+
+<p>那么，问题来了 💝 是不是 Alphabatic 呢？</p>
+
+<pre><code class="language-python">'💝'.isalpha()
+</code></pre>
 <ul class="pa0">
   
 </ul>

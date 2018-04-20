@@ -17,7 +17,14 @@
       <pubDate>Fri, 20 Apr 2018 10:51:54 +0900</pubDate>
       
       <guid>https://python-blog.netlify.com/posts/alphabetic/</guid>
-      <description>Unicode</description>
+      <description>&amp;gt;&amp;gt;&amp;gt;&#39;a&#39;.isalpha() True &amp;gt;&amp;gt;&amp;gt; &#39;京&#39;.isalpha() True  昨天，碰到一个问题，为什么京会是 alpha 呢？回来仔细看了一下 rust 文档，上面清楚的写到是否为 alphabetic 是根据属于 Unicode Derived Core Property &amp;lsquo;Alphabetic&amp;rsquo;部分来判断的。想来 Python 也是一样。(不是我不想查 Python 的文档，是查不到。)
+
+让我们来看看 DerivedCoreProperties Alphabetic 的定义
+DerivedCoreProperties
+其中有一行正好包括了我们的京的 4eac
+4E00..9FEA ; Alphabetic # Lo [20971] CJK UNIFIED IDEOGRAPH-4E00..CJK UNIFIED IDEOGRAPH-9FEA  哦，原来如此。
+那么，问题来了 💝 是不是 Alphabatic 呢？
+&#39;💝&#39;.isalpha()  </description>
     </item>
     
   </channel>
